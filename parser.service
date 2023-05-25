@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Bot
+After=network.target
+
+[Service]
+User=v
+Group=v
+
+WorkingDirectory=/home/v/PaviaAIResultsBot/
+Environment="PYTHONPATH=/home/v/PaviaAIResultsBot/"
+ExecStart=/home/v/PaviaAIResultsBot/.venv/bin/python /home/v/PaviaAIResultsBot/manage.py daemon
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
